@@ -1,5 +1,6 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 
 public class App {
@@ -49,14 +50,29 @@ public class App {
         System.out.println("\n\n\n\n\n\n\n");
         
         int numMax=0, countMax=0;
-        int numMin=0, countMin=0;
         int num = 0, count=0;
-        for (int i = 0; i < numeros.length; i++) {
-            num = numeros[i]
-            for (int j = 0; j < numeros.length; j++) {
+        for (int i = 0; i < numeros.length-1; i++) {
+            count= 0;
+            num = numeros[i];
+            for (int j = 0; j < numeros.length-i-1; j++) {
+                if(i==0){
+                    numMax = num;
+                    countMax = count;
+                }
+
+                if(numeros[j] == num){
+                    count++;
+                }
+
+                if(count > countMax){
+                    numMax = num;
+                    countMax = count; 
+                }
             }
         }
 
-        System.out.println("El valor que mas se repite es " + numMay);
+        System.out.println(Arrays.binarySearch(numeros, 10));
+
+        System.out.println("El valor que mas se repite es " + numMax + " y son "+ countMax+ " veces");
     }
 }
