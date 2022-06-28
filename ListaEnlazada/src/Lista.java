@@ -26,30 +26,50 @@ public class Lista {
         System.out.println();
     }
 
-    public void AgregarFinal(int d) {
-        var nodoNuevo = new Nodo(d);
-        if(fin == null){qq
-            fin = nodoNuevo;
+    public void agregarFinal(int d) {
+        Nodo nuevoNodo = new Nodo(d, null);
+    if (inicio == null){
+        inicio = nuevoNodo;
+    }
+    else {
+        Nodo actual = inicio;
+        while (actual.siguiente!= null){
+            actual = actual.siguiente;
+            
+            }
+        actual.siguiente = nuevoNodo;
+        }
+        System.out.println("Final");
+    }
+
+    public void insertarMedio(int d) {
+        Nodo nuevoNodo = new Nodo(d,fin);
+        if(inicio == null){
+            inicio = nuevoNodo;
+        }
+        else{
+            Nodo aux = 
         }
     }
 
     
 }
+
 /*
- * public void insertarFinal (int elemento){ 
-    Nodo nuevo = new Nodo(elemento, null);
+    public void insertarFinal (int elemento){ 
+    Nodo nuevoNodo = new Nodo(elemento, null);
     if (primero == null){
-    primero = nuevo;
+        primero = nuevoNodo;
     }
     else {
         Nodo actual = primero;
         while (actual.getSig()!= null){
             actual = actual.getSig();
             
-        }
+            }
         actual.setSig(nuevo);
         numElem++;
+        }
+        System.out.println("Final");
     }
-    System.out.println("Final");
-}
  */
