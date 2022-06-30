@@ -1,68 +1,132 @@
-public class Estudiante implements Comparable<Estudiante> {
+public class Estudiante implements Comparable <Estudiante> {
     private String nombre;
     private String matricula;
     private String grupo;
-    private Double promedio;
-    public Nota notas;
+    private double promedio;
+    private Nota notas;
 
+    /**
+     * Constructor
+     * Constructor con parametros y sed inicializan las notas
+     * @param nombre
+     * @param matricula
+     * @param grupo
+     */
     public Estudiante(String nombre, String matricula, String grupo) {
         this.nombre = nombre;
         this.matricula = matricula;
         this.grupo = grupo;
+        this.notas = new Nota();
+    }
+    
+    /**
+     * constructor
+     * constructor sin paramtros y solo se inicializan la notas
+     */
+    public Estudiante() {
         notas = new Nota();
     }
 
-    public Estudiante() {
-        super();
-    }
-
+    /**
+     * getNombre
+     * Retorna el nombre del estudiante
+     * @return nombre
+     */
     public String getNombre() {
         return nombre;
     }
-
-    public String getMatricula() {
-        return matricula;
-    }
-
-    public String getGrupo() {
-        return grupo;
-    }
-
-    public Nota getNotas() {
-        return notas;
-    }
-
-    public Double getPromedio() {
+    
+    /**
+     * getPromedio
+     * retorna el promedio del estudiante
+     * @return promedio
+     */
+    public double getPromedio() {
         return promedio;
     }
-
+    
+    /**
+     * SetGrupo
+     * Guarda el grupo en el que esta el estudiante
+     * @param grupo
+     */
+    public void setGrupo(String grupo) {
+        this.grupo = grupo;
+    }
+    /**
+     * setNombre
+     * Guarda el nombre
+     * @param nombre
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
+    
+    /**
+     * setMatricula
+     * guarda la matricula
+     * @param matricula
+     */
     public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
 
-    public void setGrupo(String grupo) {
-        this.grupo = grupo;
+    /**
+     * Retorna el atributo notas
+     * @return
+     */
+    public Nota getNotas() {
+        return notas;
     }
 
-    private void calcularPromedsio() {
-        double acum = 0;
-        for (Double calificacion : this.notas.calificaciones) {
-            acum =+ calificacion;
+    /**
+     * toString
+     * Metodo sobreescrito para mostrar los datos del estudiante
+     */
+    @Override
+    public String toString() {
+        String cadena = "";
+        cadena = "\nNombre:    " + nombre +
+                "\nMatrícula: " + matricula +
+                "\nGrupo:     " + grupo;
+        return cadena;
+    }
+    
+    /**
+     * calcularPromedio
+     * Metgodo para calcular el peromedio
+     */
+    public void calcularPromedio() {
+        double acum = 0, prom = 0;
+        for (Double cali : getNotas().getCalificaciones()) {
+            acum = acum + cali;
         }
-        promedio = (acum/notas.calificaciones.size());
+        prom = acum / (getNotas().getCalificaciones().size());
+        this.promedio = prom;
+    }
+    
+    /**
+     * reporteCalificaciones
+     * Metodo para mostrar las calificaciones de cada materia y el promedio
+     */
+    public void reporteCalificaciones() {
+        System.out.println("Materia                Calficación");
+        for (int i = 0; i < getNotas().getMaterias().size(); i++) {
+            System.out.print(getNotas().getMaterias().get(i));
+            System.out.println("\t\t" + this.getNotas().getCalificaciones().get(i));
+        }
+        System.out.println("Promedio            "+ getPromedio());
     }
 
+    /**
+     * compareTo
+     * metodo para el ordenamiento de los estudiantes
+     */
     @Override
     public int compareTo(Estudiante e) {
-        // TODO Auto-generated method stub
-        double da = this.getPromedio();
-        double db = e.getPromedio();
+        Double da = this.getPromedio();
+        Double db = e.getPromedio();
         return da.compareTo(db);
+
     }
-
-
 }

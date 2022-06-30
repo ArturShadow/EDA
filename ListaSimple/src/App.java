@@ -1,3 +1,8 @@
+/**
+ * ! Recomendacion: Instale estension Better comments
+ * ?Luis Arturo Loya Baca
+ */
+
 public class App {
     public static void main(String[] args) throws Exception {
         /* Pruebas, video 1
@@ -35,12 +40,17 @@ public class App {
         lista.addPrimero(2);
         lista.addPrimero(1);
 
-        lista.eliminarPrimero();
+        // lista.eliminarPrimero();
+        // lista.eiminar(2);
+        lista.cortar(3);
         
         System.out.println("Primero: " + lista.obtener(0));
+        System.out.println("Index 2: " + lista.obtener(2));
         System.out.println("Ultimo: "+ lista.obtener(lista.size()-1));
         System.out.println("Tamaño: " + lista.size());
         
         System.out.println("Esta vacia: " + lista.estaVacia());
+
+
     }
 }
