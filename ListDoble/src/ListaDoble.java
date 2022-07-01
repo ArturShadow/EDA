@@ -20,7 +20,6 @@ public class ListaDoble {
             }
             if (p1 == p2) {
                 r1 = nuevo;
-                nuevo.sig = p1;
                 p1.ant = nuevo;
             } else {
                 p1.sig = nuevo;
@@ -30,12 +29,18 @@ public class ListaDoble {
                     nuevo.ant = p1;
                 }
                 else{
-                    p1 = nuevo;
-                    nuevo.sig = p2;
                     p2.ant = nuevo;
                     nuevo.ant = p1;
                 }
             }
+        }
+    }
+
+    public void mostrarD() {
+        Nodo ptr = r1;
+        while(ptr != null){
+            System.out.print(ptr.inf+"--> ");
+            ptr = ptr.sig;
         }
     }
 }
