@@ -3,8 +3,8 @@ public class Nodo {
     public Nodo sig;
     public Nodo ant;
 
-    public Nodo() {
-        inf = 0;
+    public Nodo(int valor) {
+        inf = valor;
         sig = null;
         ant = null;
     }

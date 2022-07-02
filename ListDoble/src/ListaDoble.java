@@ -7,7 +7,7 @@ public class ListaDoble {
     }
 
     public void addOrden(int valor) {
-        Nodo nuevo = new Nodo();
+        Nodo nuevo = new Nodo(valor);
         if ((r1 == null) && (r2 == null)) {
             r1 = nuevo;
             r2 = nuevo;
