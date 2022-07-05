@@ -1,6 +1,6 @@
 public class ListaCircularDoble {
     /**
-     * Nodo inicxial
+     * Nodo inicial
      */
     private Nodo raiz;
     private int cantidad;
