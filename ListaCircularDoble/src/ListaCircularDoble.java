@@ -83,8 +83,33 @@ public class ListaCircularDoble {
      * dado dos numeros grandes mostrar la suma de ambos utilizando listas
      */
     
-    public void name() {
-        
+    public void addEnd(int valor) {
+        Nodo nuevo = new Nodo(valor);
+        Nodo p1=raiz.ant, p2 = raiz;
+
+        /*
+         * conexiones
+         */
+
+        p1.sig = nuevo;
+        nuevo.sig = p2;
+        p2.ant =  nuevo;
+        nuevo.ant = p1;
+
+    }
+
+    public String suma(ListaCircularDoble b) {
+        String resultado = "";
+        Nodo p1 = raiz.ant, p2 = b.raiz.ant;
+        int a, piv = 0,digito;
+        while(p1 != raiz && p2 != b.raiz){
+            a = p1.inf + p2.inf + piv;
+            piv = a / 10;
+
+            digito = (a % 10);
+            resultado = digito+resultado;
+        }
+        return resultado;
     }
 
     public int getCantidad() {

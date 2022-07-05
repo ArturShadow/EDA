@@ -41,6 +41,7 @@ public class ListaDoble {
         while(ptr != null){
             System.out.print(ptr.inf+"--> ");
             ptr = ptr.sig;
+
         }
     }
 }
