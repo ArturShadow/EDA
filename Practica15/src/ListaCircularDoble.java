@@ -45,6 +45,22 @@ public class ListaCircularDoble {
         Nodo ptr = raiz.siguiente;
         while (ptr != raiz) {
             System.out.println(ptr.empleado.toString());
+            ptr = ptr.siguiente;
         }
+    }
+
+    public void addEnd(Empleado empleado) {
+        Nodo nuevo = new Nodo(empleado);
+        Nodo p1=raiz.anterior, p2 = raiz;
+
+        /*
+         * conexiones
+         */
+
+        p1.siguiente = nuevo;
+        nuevo.siguiente = p2;
+        p2.anterior =  nuevo;
+        nuevo.anterior = p1;
+
     }
 }
