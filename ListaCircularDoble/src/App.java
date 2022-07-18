@@ -37,7 +37,7 @@ public class App {
         System.out.println("Lista A");
         a.mostrarID(); 
         System.out.println("\nLista B");
-        b.mostrarID(); 
+        b.mostrarID();
         sc.close();
     }
 }

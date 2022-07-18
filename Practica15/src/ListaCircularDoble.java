@@ -53,7 +53,7 @@ public class ListaCircularDoble {
         Nodo nuevo = new Nodo(empleado);
         Nodo p1=raiz.anterior, p2 = raiz;
 
-        /*
+        /**
          * conexiones
          */
 
@@ -62,5 +62,15 @@ public class ListaCircularDoble {
         p2.anterior =  nuevo;
         nuevo.anterior = p1;
 
+    }
+
+    public Empleado obtEmpleado(int val){
+        Nodo ptr = new Nodo();
+        ptr = raiz;
+        boolean ban = true;
+        while(ban && ptr.siguiente != raiz){
+            if(ptr)
+        }
+        return ptr.empleado;
     }
 }

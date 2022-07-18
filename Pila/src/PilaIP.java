@@ -1,11 +1,11 @@
-public class Pila {
-    private Nodo tope;
+public class PilaIP {
+    private Nodoip tope;
     private int lenght;
     
     /**
      * contructor de la clase
      */
-    public Pila() {
+    public PilaIP() {
         tope = null;
         lenght = 0;
     }
@@ -21,17 +21,17 @@ public class Pila {
      * Metodo para ingresar un nuevo elemento a la pila
      * @param e
      */
-    public void IngresarNuevo(Empleado e) {
-        Nodo nuevo = new Nodo(e); //primero se crea el nuevo nodo
-        nuevo.setSiguiente(tope); // En la parte siguiente del nuevo nodo s guarda la direccion del primer nodo actual
-        tope = nuevo; // El nuevo nodo se convierte en el tope de la pila
+    public void IngresarNuevo(int e) {
+        Nodoip nuevo = new Nodoip(e); //primero se crea el nuevo nodoip
+        nuevo.setSiguiente(tope); // En la parte siguiente del nuevo nodoip s guarda la direccion del primer nodoip actual
+        tope = nuevo; // El nuevo nodoip se convierte en el tope de la pila
         lenght++; // aumeenta la longitud
     }
     /**
      * Metodo para sacar el elemento que esta hasta arriba de la pila y mostrar el empleado 
      */
-    public Empleado sacarEmpleado(){
-        Empleado aux=tope.getEmpleado();// 
+    public int sacarDato(){
+        int aux=tope.getDato();// 
         tope=tope.getSiguiente();
         lenght--;
         return aux;
@@ -43,13 +43,14 @@ public class Pila {
         tope=tope.getSiguiente();
         lenght--;
     }
+    
 
     /**
      * Metodo para obtener un la informacion del primer elemento de la pila
      * @return
      */
-    public Empleado Primero(){
-        return tope.getEmpleado();
+    public int Primero(){
+        return tope.getDato();
     }
 
     /**
@@ -68,7 +69,4 @@ public class Pila {
             sacarElemento();
         }
     }
-
-
-    
 }
