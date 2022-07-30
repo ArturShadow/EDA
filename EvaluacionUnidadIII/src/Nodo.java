@@ -1,17 +1,18 @@
 public class Nodo {
     Nodo ant;
-    int inf;
+    Empleado empleado;
     Nodo sig;
 
-    public Nodo(int inf) {
+    public Nodo(Empleado d) {
         ant = null;
-        this.inf = inf;
+        this.empleado = d;
         sig = null;
     }
 
     public Nodo() {
         ant = null;
-        inf = 0;
+        empleado = null;
         sig = null;
+        
     }
 }
