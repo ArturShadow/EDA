@@ -83,21 +83,30 @@ public class ListaCircularDoble {
     }
 
     public void DesplegarAdelante() {
-        Nodo actual = new Nodo();
-        actual = primero;
-        do {
-            System.out.println(actual.empleado.toString());
-            actual = actual.sig;
-        } while (actual != primero);
-        actual = null;
+        if (primero.empleado != null) {
+            Nodo actual = new Nodo();
+            actual = primero;
+            do {
+                System.out.println(actual.empleado.toString());
+                actual = actual.sig;
+            } while (actual != primero);
+            actual = null;
+        } else{
+            System.out.println("No hay nada");
+        }
     }
     public void DesplegarAtras() {
-        Nodo actual = new Nodo();
-        actual = ultimo;
-        do {
-            System.out.println(actual.empleado.toString());
-            actual = actual.ant;
-        } while (actual != ultimo);
-        actual = null;
+        if (ultimo.empleado != null) {
+            Nodo actual = new Nodo();
+            actual = ultimo;
+            do {
+                System.out.println(actual.empleado.toString());
+                actual = actual.ant;
+            } while (actual != ultimo);
+            actual = null;
+        } else{
+            System.out.println("No hay nada");
+        }
+        
     }
 }
