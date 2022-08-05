@@ -13,6 +13,5 @@ public class Nodo {
         ant = null;
         empleado = null;
         sig = null;
-        
     }
 }

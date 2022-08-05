@@ -55,12 +55,3 @@ public class Pila {
         return cc.MostrarPila();
     }
 } 
-
-/*
- * public String InvertirPila(){
-    Nodo Temporal=cima;
-    Pila cc new Pila();
-    while(!Vacia()){
-        cc.Apilar(cima.dato);
-        cima cima.siguiente;
- */

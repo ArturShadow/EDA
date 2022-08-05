@@ -11,7 +11,6 @@ public class App {
             System.out.print(
                     "1. Ingresar nodo\n2. Buscar Nodo\n3. Verificar estado de la lista\n4.Eliminar\n5. Desplegar Adelante\n6. Desplegar Atras\n7. Numero de elementos\n8. Salir\nOpcion -->");
             opcion = sc.nextInt();
-            // System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
             switch (opcion) {
                 case 1:
@@ -45,7 +44,7 @@ public class App {
                     break;
                 case 4:
                     if (!lcd.Vacia()) {
-                        System.out.print("Digam que empleado quiere eliminar: ");
+                        System.out.print("Digame que empleado quiere eliminar: ");
                         lcd.EliminarNodo(sc.next());
                     } else {
                         System.out.println("La lista esta vacia, no se puede realizar esta accion");
@@ -58,7 +57,7 @@ public class App {
                     lcd.DesplegarAtras();
                     break;
                 case 7:
-                    System.out.println("Tamaño de l lista es de " + lcd.lenght);
+                    System.out.println("Tamaño de la lista es de " + lcd.lenght);
                     break;
             }
         } while (opcion < 8);
