@@ -142,7 +142,7 @@ public class Arbol_Binario {
         if (raiz != null) {
             Arbol_Nodo reco = raiz;
             while (reco.left != null) {
-                reco = reco.right;
+                reco = reco.left;
             }
             System.out.println("Menor valor del árbol:" + reco.data);
         }
